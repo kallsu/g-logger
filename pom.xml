@@ -49,9 +49,9 @@
 	<!-- Software Content Management -->
 	<!-- ============================================================================= -->
 	<scm>
-		<connection>scm:hg:https://bitbucket.org/kallsu/g-logger</connection>
-		<developerConnection>scm:hg:https://bitbucket.org/kallsu/g-logger</developerConnection>
-		<url>http://bitbucket.org/kallsu/g-logger</url>
+		<connection>scm:hg:https://github.com/kallsu/g-logger</connection>
+		<developerConnection>scm:hg:https://github.com/kallsu/g-logger</developerConnection>
+		<url>http://github.com/kallsu/g-logger</url>
 		<tag>HEAD</tag>
 	</scm>
 
