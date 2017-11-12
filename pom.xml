@@ -1,0 +1,159 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<!-- ============================================================================= -->
+	<!-- General Information -->
+	<!-- ============================================================================= -->
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>g-logger</artifactId>
+	<version>1.2.1</version>
+	<packaging>jar</packaging>
+
+	<name>g-logger</name>
+	<description>G-Logger is the central library of loggers to use.</description>
+	<url>http://g-ee.sourceforge.net</url>
+
+	<!-- ============================================================================= -->
+	<!-- Parent POM Information -->
+	<!-- ============================================================================= -->
+	<parent>
+		<groupId>net.sf.gee</groupId>
+		<artifactId>g-parent</artifactId>
+		<version>0.1.20</version>
+	</parent>
+
+	<!-- ============================================================================= -->
+	<!-- License -->
+	<!-- ============================================================================= -->
+	<licenses>
+		<license>
+			<name>The Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+
+	<!-- ============================================================================= -->
+	<!-- Developers -->
+	<!-- ============================================================================= -->
+	<developers>
+		<developer>
+			<name>Giorgio Desideri</name>
+			<email>Giorgio Desideri</email>
+			<organization>None.</organization>
+			<organizationUrl>http://g-ee.sourceforge.net</organizationUrl>
+		</developer>
+	</developers>
+
+	<!-- ============================================================================= -->
+	<!-- Software Content Management -->
+	<!-- ============================================================================= -->
+	<scm>
+		<connection>scm:hg:https://bitbucket.org/kallsu/g-logger</connection>
+		<developerConnection>scm:hg:https://bitbucket.org/kallsu/g-logger</developerConnection>
+		<url>http://bitbucket.org/kallsu/g-logger</url>
+		<tag>HEAD</tag>
+	</scm>
+
+	<!-- ============================================================================= -->
+	<!-- Properties Information -->
+	<!-- ============================================================================= -->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+
+	<!-- ============================================================================= -->
+	<!-- Dependencies Information -->
+	<!-- ============================================================================= -->
+	<dependencies>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.15</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>jms</artifactId>
+					<groupId>javax.jms</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>jmxtools</artifactId>
+					<groupId>com.sun.jdmk</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>jmxri</artifactId>
+					<groupId>com.sun.jmx</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+	</dependencies>
+
+	<!-- ============================================================================= -->
+	<!-- REPOSITORY Information -->
+	<!-- ============================================================================= -->
+	<repositories>
+
+		<repository>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
+				<checksumPolicy>warn</checksumPolicy>
+			</releases>
+
+			<snapshots>
+				<enabled>false</enabled>
+				<updatePolicy>always</updatePolicy>
+				<checksumPolicy>fail</checksumPolicy>
+			</snapshots>
+
+			<id>orssh-releases</id>
+			<name>Open Source Software - Releases</name>
+			<url>https://oss.sonatype.org/content/repositories/releases</url>
+			<layout>default</layout>
+		</repository>
+	</repositories>
+
+	<!-- ================================================================================== -->
+	<!-- Build Management configuration -->
+	<!-- ================================================================================== -->
+	<build>
+		<finalName>${project.artifactId}-${project.version}</finalName>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<configuration>
+					<additionalparam>-Xdoclint:none</additionalparam>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
