@@ -145,6 +145,17 @@ public class GLogFactory {
   }
 
   /**
+   * Build the default logger {@link SimpleGLogger}
+   * 
+   * @param callerClass
+   * 
+   * @return instance of {@link SimpleGLogger}
+   */
+  public SimpleGLogger getLogger(Class<?> callerClass) {
+    return getLogger(SimpleGLogger.class, callerClass, null);
+  }
+
+  /**
    * Builds the logger.
    *
    * @param <T> the type of glogger
